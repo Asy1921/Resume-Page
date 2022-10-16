@@ -36,9 +36,9 @@ function AboutMe() {
 
                   <Button
                     className="ml-2"
-                    onClick={
-                      (window.location.href = "mailto:amitabh.suyash@gmail.com")
-                    }
+                    onClick={() => {
+                      window.location.href = "mailto:amitabh.suyash@gmail.com";
+                    }}
                   >
                     Email Me
                   </Button>
@@ -51,7 +51,17 @@ function AboutMe() {
           </div>
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <div style={contentStyle}>
+            <div className="bg-gradient-to-r from-gray-800 to-slate-800 h-full">
+              <h1 className=" text-white font-bold text-2xl pt-6 underline ">
+                Work Experience
+              </h1>
+              <span className="text-white text-xl">
+                Business Technology Solutions Associate (Jan 2022-Present)
+                {"    "}
+              </span>
+            </div>
+          </div>
         </div>
         <div>
           <h3 style={contentStyle}>3</h3>
