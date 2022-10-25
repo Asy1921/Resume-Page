@@ -1,4 +1,4 @@
-import { Carousel, Card, Col, Row, Button } from "antd";
+import { Carousel, Card, Col, Row, Button, Tooltip, List } from "antd";
 import React from "react";
 import SelfImg from "../Images/Self.jpg";
 const { Meta } = Card;
@@ -16,6 +16,41 @@ const contentStyle = {
   background: "#364d79",
 };
 function AboutMe() {
+  const data = [
+    {
+      title: "Army Public School-Dhaula kuan, New Delhi",
+      description: (
+        <ul>
+          <li>10th - 9.4 CGPA</li>
+          <li>12th - 92.2% (PCM with CS)</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Vellore Institute of Technology",
+      description: "Computer Science Engineering - 8.45 CGPA",
+    },
+  ];
+  const skillData = [
+    {
+      title: "React",
+    },
+    {
+      title: "Dotnet",
+    },
+    {
+      title: "Excel-VBA",
+    },
+    {
+      title: "Game Dev (Unity,C#)",
+    },
+    {
+      title: "Java",
+    },
+    {
+      title: "C/C++",
+    },
+  ];
   return (
     <div className="mt-2">
       <Carousel
@@ -27,21 +62,23 @@ function AboutMe() {
             <Row className="">
               <Col span={16}>
                 <div className="bg-gradient-to-r from-gray-800 to-slate-800 h-full">
-                  <h1 className=" text-white font-bold text-2xl pt-6 underline ">
+                  <h1 className=" text-white font-bold text-2xl pt-6 underline font-sans">
                     About Me
                   </h1>
-                  <span className="text-white text-xl">
+                  <span className="text-white text-xl font-serif">
                     Hi, I am Amitabh Suyash, a Full Stack Developer{"    "}
                   </span>
-
-                  <Button
-                    className="ml-2"
-                    onClick={() => {
-                      window.location.href = "mailto:amitabh.suyash@gmail.com";
-                    }}
-                  >
-                    Email Me
-                  </Button>
+                  <Tooltip title="amitabh.suyash@zs.com">
+                    <Button
+                      className="ml-2"
+                      onClick={() => {
+                        window.location.href =
+                          "mailto:amitabh.suyash@gmail.com";
+                      }}
+                    >
+                      Email Me
+                    </Button>
+                  </Tooltip>
                 </div>
               </Col>
               <Col span={8}>
@@ -64,10 +101,68 @@ function AboutMe() {
           </div>
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <div style={contentStyle}>
+            <div className="bg-gradient-to-r from-gray-800 to-slate-800 h-full">
+              <h1 className=" text-white font-bold text-2xl pt-6 underline ">
+                Skills
+              </h1>
+              <div className="text-white text-xl pt-12">
+                <List
+                  className="  text-white text-xl "
+                  itemLayout="horizontal"
+                  dataSource={skillData}
+                  split={false}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <List.Item.Meta
+                        title={
+                          <h3 className="  text-white text-lg">{item.title}</h3>
+                        }
+                        description={
+                          <p className="  text-white text-sm">
+                            {item.description}
+                          </p>
+                        }
+                      />
+                    </List.Item>
+                  )}
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div>
-          <h3 style={contentStyle}>4</h3>
+          <div style={contentStyle}>
+            <div className="bg-gradient-to-r from-gray-800 to-slate-800 h-full">
+              <h1 className=" text-white font-bold text-2xl pt-6 underline ">
+                Education
+              </h1>
+              <div className="pt-12">
+                <List
+                  className="  text-white text-xl "
+                  itemLayout="horizontal"
+                  dataSource={data}
+                  split={false}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <List.Item.Meta
+                        title={
+                          <h3 className="  text-white text-2xl">
+                            {item.title}
+                          </h3>
+                        }
+                        description={
+                          <p className="  text-white text-sm">
+                            {item.description}
+                          </p>
+                        }
+                      />
+                    </List.Item>
+                  )}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </Carousel>
     </div>

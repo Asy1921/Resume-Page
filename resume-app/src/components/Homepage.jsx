@@ -9,9 +9,10 @@ import {
   AntDesignOutlined,
 } from "@ant-design/icons";
 
-import { Button, Col, Menu, Row, Avatar } from "antd";
+import { Button, Col, Menu, Row, Avatar, Layout } from "antd";
 import React, { useState } from "react";
 import AboutMe from "./AboutMe";
+const { Header, Footer, Sider, Content } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -23,8 +24,8 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem("About Me", "1", <PieChartOutlined />),
-  getItem("Education", "2", <DesktopOutlined />),
-  getItem("Work", "3", <ContainerOutlined />),
+  // getItem("Education", "2", <DesktopOutlined />),
+  // getItem("Work", "3", <ContainerOutlined />),
   // getItem('Navigation One', 'sub1', <MailOutlined />, [
   //   getItem('Option 5', '5'),
   //   getItem('Option 6', '6'),
@@ -44,30 +45,48 @@ const Homepage = () => {
   };
   const [selectedKey, setSelectedKey] = useState("1");
   return (
-    <div
-      style={{
-        width: "100%",
-      }}
-    >
-      <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
-        mode="horizontal"
-        theme="dark"
-        inlineCollapsed={collapsed}
-        items={items}
-        onClick={(e) => {
-          setSelectedKey(e);
+    <Layout>
+      <Header>
+        <Menu
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
+          mode="horizontal"
+          theme="dark"
+          //inlineCollapsed={collapsed}
+          items={items}
+          onClick={(e) => {
+            setSelectedKey(e.key);
+          }}
+        />
+      </Header>
+      <Content className="bg-gray-200">
+        <Row className="flex justify-center p-2 justify-items-center">
+          {selectedKey == "1" && (
+            <Col span={22} className="flex justify-center ">
+              <AboutMe />
+            </Col>
+          )}
+        </Row>
+      </Content>
+      <Footer
+        className="text-white"
+        style={{
+          textAlign: "center",
+          backgroundColor: "rgb(55 65 81)",
+          borderTop: "1px solid #E7E7E7",
+          color: "white",
+          textAlign: "center",
+          padding: "",
+          position: "fixed",
+          left: "0",
+          bottom: "0",
+          height: "60px",
+          width: "100%",
         }}
-      />
-      <Row className="flex justify-center p-2 justify-items-center">
-        {selectedKey == "1" && (
-          <Col span={22} className="flex justify-center ">
-            <AboutMe />
-          </Col>
-        )}
-      </Row>
-    </div>
+      >
+        ASY
+      </Footer>
+    </Layout>
   );
 };
 export default Homepage;

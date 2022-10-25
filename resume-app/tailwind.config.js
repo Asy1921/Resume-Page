@@ -19,6 +19,15 @@ module.exports = {
       'bermuda': '#78dcca',
       }
     },
+    fontFamily: {
+      'sans': 'ui-sans-serif',
+      'serif': 'ui-serif', 
+      'mono': 'ui-monospace', 
+      'display': 'Oswald',
+      'body': '"Open Sans"',
+    }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }
