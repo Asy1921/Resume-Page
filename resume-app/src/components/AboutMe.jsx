@@ -1,4 +1,10 @@
+import {
+  CalendarOutlined,
+  FlagOutlined,
+  HomeOutlined,
+} from "@ant-design/icons";
 import { Carousel, Card, Col, Row, Button, Tooltip, List } from "antd";
+import Avatar from "antd/lib/avatar/avatar";
 import React from "react";
 import SelfImg from "../Images/Self.jpg";
 const { Meta } = Card;
@@ -52,7 +58,7 @@ function AboutMe() {
     },
   ];
   return (
-    <div className="mt-2">
+    <div className="">
       <Carousel
       //   autoplay
       >
@@ -60,11 +66,11 @@ function AboutMe() {
           <div style={contentStyle}>
             {" "}
             <Row className="">
-              <Col span={16}>
+              <Col span={24}>
                 <div className="bg-gradient-to-r from-gray-800 to-slate-800 h-full">
-                  <h1 className=" text-white font-bold text-2xl pt-6 underline font-sans">
+                  {/* <h1 className=" text-white font-bold text-2xl pt-6 underline font-sans">
                     About Me
-                  </h1>
+                  </h1> */}
                   <span className="text-white text-xl font-serif">
                     Hi, I am Amitabh Suyash, a Full Stack Developer{"    "}
                   </span>
@@ -81,9 +87,9 @@ function AboutMe() {
                   </Tooltip>
                 </div>
               </Col>
-              <Col span={8}>
+              {/* <Col span={8}>
                 <img style={{ width: "100%" }} alt="example" src={SelfImg} />
-              </Col>
+              </Col> */}
             </Row>
           </div>
         </div>
@@ -165,6 +171,68 @@ function AboutMe() {
           </div>
         </div>
       </Carousel>
+      <div className=" bg-slate-900">
+        <Row className="p-4 ml-4">
+          <Col span={8}>
+            <Avatar size={256} src={SelfImg} />
+          </Col>
+          <Col span={16} className=" pt-6  ">
+            <h1 className="text-white pl-2 text-xl">
+              <u>About me</u>
+            </h1>
+            <div className="">
+              <p className="font-sans text-white pl-2 ">
+                Hi, i'm a full stack developer. I primaririly use React and
+                Dotnet.{" "}
+              </p>
+              <Row>
+                <Col span={8}>
+                  <HomeOutlined className="p-2" style={{ color: "white" }} />
+                  <b className="font-sans text-white ">Location : </b>{" "}
+                  <i className="font-sans text-white ">Gurgaon</i>
+                </Col>
+
+                <Col span={8}>
+                  <CalendarOutlined
+                    className="p-2"
+                    style={{ color: "white" }}
+                  />
+                  <b className="font-sans text-white ">Age : </b>{" "}
+                  <i className="font-sans text-white ">25</i>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={8}>
+                  <FlagOutlined className="p-2" style={{ color: "white" }} />
+                  <b className="font-sans text-white ">Nationality : </b>{" "}
+                  <i className="font-sans text-white ">Indian</i>
+                </Col>
+                <Col span={8}>
+                  <HomeOutlined className="p-2" style={{ color: "white" }} />
+                  <b className="font-sans text-white ">Interests : </b>{" "}
+                  <i className="font-sans text-white ">
+                    Gaming, Football, Coding
+                  </i>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={8}>
+                  <FlagOutlined className="p-2" style={{ color: "white" }} />
+                  <b className="font-sans text-white ">College : </b>{" "}
+                  <i className="font-sans text-white ">
+                    Vellore Institute of Technology
+                  </i>
+                </Col>
+                <Col span={8}>
+                  <HomeOutlined className="p-2" style={{ color: "white" }} />
+                  <b className="font-sans text-white ">Employment : </b>{" "}
+                  <i className="font-sans text-white ">ZS Associates</i>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }

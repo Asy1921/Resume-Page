@@ -60,14 +60,17 @@ const Homepage = () => {
         />
       </Header>
       <Content className="bg-gray-200">
-        <Row className="flex justify-center p-2 justify-items-center">
+        <Row className="flex justify-center  justify-items-center">
           {selectedKey == "1" && (
-            <Col span={22} className="flex justify-center ">
+            <Col span={24} className="flex justify-center ">
               <AboutMe />
             </Col>
           )}
         </Row>
       </Content>
+      <div className="bg-gray-200" style={{
+        height:"60px"
+      }}></div>
       <Footer
         className="text-white"
         style={{
@@ -86,6 +89,7 @@ const Homepage = () => {
       >
         ASY
       </Footer>
+
     </Layout>
   );
 };
