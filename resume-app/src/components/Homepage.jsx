@@ -12,6 +12,7 @@ import {
 import { Button, Col, Menu, Row, Avatar, Layout } from "antd";
 import React, { useState } from "react";
 import AboutMe from "./AboutMe";
+import MainBox from "./MainBox";
 const { Header, Footer, Sider, Content } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
@@ -63,14 +64,18 @@ const Homepage = () => {
         <Row className="flex justify-center  justify-items-center">
           {selectedKey == "1" && (
             <Col span={24} className="flex justify-center ">
+              <MainBox />
               <AboutMe />
             </Col>
           )}
         </Row>
       </Content>
-      <div className="bg-gray-200" style={{
-        height:"60px"
-      }}></div>
+      <div
+        className="bg-gray-200"
+        style={{
+          height: "60px",
+        }}
+      ></div>
       <Footer
         className="text-white"
         style={{
@@ -89,7 +94,6 @@ const Homepage = () => {
       >
         ASY
       </Footer>
-
     </Layout>
   );
 };
