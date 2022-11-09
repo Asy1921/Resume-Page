@@ -13,6 +13,7 @@ import { Button, Col, Menu, Row, Avatar, Layout } from "antd";
 import React, { useState } from "react";
 import AboutMe from "./AboutMe";
 import MainBox from "./MainBox";
+import Navbar from "./Navbar";
 const { Header, Footer, Sider, Content } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
@@ -23,6 +24,7 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+
 const items = [
   getItem("About Me", "1", <PieChartOutlined />),
   // getItem("Education", "2", <DesktopOutlined />),
@@ -48,7 +50,7 @@ const Homepage = () => {
   return (
     <Layout>
       <Header>
-        <Menu
+        {/* <Menu
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
           mode="horizontal"
@@ -58,7 +60,8 @@ const Homepage = () => {
           onClick={(e) => {
             setSelectedKey(e.key);
           }}
-        />
+        /> */}
+        <Navbar />
       </Header>
       <Content className="bg-gray-200">
         <Row className="flex justify-center  justify-items-center">
@@ -81,7 +84,6 @@ const Homepage = () => {
         style={{
           textAlign: "center",
           backgroundColor: "rgb(55 65 81)",
-          borderTop: "1px solid #E7E7E7",
           color: "white",
           textAlign: "center",
           padding: "",

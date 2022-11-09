@@ -22,17 +22,23 @@ function MainBox() {
       <div className="introBox align-middle justify-center justify-items-center">
         <Row>
           <Col span={24}>
-            <span className="text-white text-6xl  text-center p-6 ">
+            <span
+              className=" text-6xl  text-center p-6 "
+              style={{ color: "lightblue" }}
+            >
               I'm Amitabh Suyash
             </span>
           </Col>
         </Row>
 
-        <Row>
+        <Row className="p-6">
           <Col span={24}>
-            <span className="text-white text-xl m-1 text-center mt-4s">
+            <span
+              className=" text-xl  text-center "
+              style={{ color: "lightcyan" }}
+            >
               I'm a Gurgaon based Full Stack Software Engineer, currently
-              working at ZS Associates helping build a modern internal tools.
+              working at ZS Associates helping build modern internal tools.
             </span>
           </Col>
         </Row>
