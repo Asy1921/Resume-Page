@@ -9,6 +9,8 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import SelfImg from "../Images/Self.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { setAqi } from "../store/features/AqiSlice/AqiSlice";
 const { Meta } = Card;
 const contentStyle = {
   height: "600px",
@@ -24,8 +26,10 @@ const contentStyle = {
   background: "#364d79",
 };
 function AboutMe() {
+  const aqi = useSelector((state) => state.aqi.aqiVal);
   const [apiData, setApiData] = useState();
-  const [aqi, setAqi] = useState("");
+  const dispatch = useDispatch();
+  // const [aqi, setAqi] = useState("");
   const data = [
     {
       title: "Army Public School-Dhaula kuan, New Delhi",
@@ -62,22 +66,21 @@ function AboutMe() {
     },
   ];
   useEffect(() => {
-    //https://api.waqi.info/feed/here/?token=481bf9e3a4908abcd2c7b45889c2de09f651901c
     fetch(
       "https://api.waqi.info/feed/here/?token=481bf9e3a4908abcd2c7b45889c2de09f651901c"
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          setApiData(result);
+          // setApiData(result);
           console.log(result);
-          setAqi(result.data.aqi);
+          dispatch(setAqi(result.data.aqi));
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
         (error) => {
-          setApiData("No data for this locations");
+          dispatch(setAqi("No data for this locations"));
         }
       );
   }, []);
@@ -101,7 +104,9 @@ function AboutMe() {
                 <Col span={8}>
                   <HomeOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">Location : </b>{" "}
-                  <i className="font-sans text-white ">Gurgaon</i>
+                  <i className="font-sans text-white ">
+                    <Tooltip title={"AQI:" + aqi}>Gurgaon</Tooltip>
+                  </i>
                 </Col>
 
                 <Col span={8}>
