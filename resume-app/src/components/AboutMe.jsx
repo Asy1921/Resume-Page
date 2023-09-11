@@ -66,9 +66,7 @@ function AboutMe() {
     },
   ];
   useEffect(() => {
-    fetch(
-      "https://api.waqi.info/feed/here/?token=481bf9e3a4908abcd2c7b45889c2de09f651901c"
-    )
+    fetch(process.env.REACT_APP_API_KEY)
       .then((res) => res.json())
       .then(
         (result) => {
