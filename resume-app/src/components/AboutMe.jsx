@@ -103,7 +103,12 @@ function AboutMe() {
                   <HomeOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">Location : </b>{" "}
                   <i className="font-sans text-white ">
-                    <Tooltip title={"AQI:" + aqi}>Gurgaon</Tooltip>
+                    <Tooltip
+                      color={aqi > 100 ? "red" : aqi > 40 ? "tan" : "green"}
+                      title={"AQI:" + aqi}
+                    >
+                      Gurgaon
+                    </Tooltip>
                   </i>
                 </Col>
 
