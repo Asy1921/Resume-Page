@@ -14,28 +14,28 @@ function Navbar() {
                     className="bg-gray-900 text-white px-3 py-2 rounded-md text-xl font-medium"
                     aria-current="page"
                   >
-                    Dashboard
+                    Work
                   </a>
 
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
                   >
-                    Team
+                    About Me
                   </a>
 
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
                   >
-                    Projects
+                    Skills
                   </a>
 
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
                   >
-                    Calendar
+                    Contact
                   </a>
                 </div>
               </div>
