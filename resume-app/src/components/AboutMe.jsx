@@ -1,7 +1,11 @@
 import {
+  BookOutlined,
   CalendarOutlined,
+  CustomerServiceOutlined,
   FlagOutlined,
   HomeOutlined,
+  IdcardOutlined,
+  LaptopOutlined,
 } from "@ant-design/icons";
 import { Carousel, Card, Col, Row, Button, Tooltip, List } from "antd";
 import Avatar from "antd/lib/avatar/avatar";
@@ -113,10 +117,7 @@ function AboutMe() {
                 </Col>
 
                 <Col span={8}>
-                  <CalendarOutlined
-                    className="p-2"
-                    style={{ color: "white" }}
-                  />
+                  <IdcardOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">Age : </b>{" "}
                   <i className="font-sans text-white ">25</i>
                 </Col>
@@ -128,7 +129,10 @@ function AboutMe() {
                   <i className="font-sans text-white ">Indian</i>
                 </Col>
                 <Col span={8}>
-                  <HomeOutlined className="p-2" style={{ color: "white" }} />
+                  <CustomerServiceOutlined
+                    className="p-2"
+                    style={{ color: "white" }}
+                  />
                   <b className="font-sans text-white ">Interests : </b>{" "}
                   <i className="font-sans text-white ">
                     Gaming, Football, Coding
@@ -137,14 +141,14 @@ function AboutMe() {
               </Row>
               <Row>
                 <Col span={8}>
-                  <FlagOutlined className="p-2" style={{ color: "white" }} />
+                  <BookOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">College : </b>{" "}
                   <i className="font-sans text-white ">
                     Vellore Institute of Technology
                   </i>
                 </Col>
                 <Col span={8}>
-                  <HomeOutlined className="p-2" style={{ color: "white" }} />
+                  <LaptopOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">Employment : </b>{" "}
                   <i className="font-sans text-white ">ZS Associates</i>
                 </Col>
