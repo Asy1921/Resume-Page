@@ -99,7 +99,7 @@ function AboutMe() {
             </h1>
             <div className="">
               <p className="font-sans text-white pl-2 ">
-                Hi, i'm a full stack developer. I primarily use React and
+                Hi, I'm a full stack developer. I primarily use React and
                 Dotnet.{" "}
               </p>
               <Row>
