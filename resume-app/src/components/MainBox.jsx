@@ -9,6 +9,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import backgroundImg from "../Images/bg.jpg";
+import "../styles/generalStyles.css";
 const { Meta } = Card;
 
 function MainBox() {
@@ -26,7 +27,8 @@ function MainBox() {
               className=" text-6xl  text-center p-6 "
               style={{ color: "lightblue" }}
             >
-              I'm Amitabh Suyash
+              I'm
+              <span className="waviy"> Amitabh Suyash</span>
             </span>
           </Col>
         </Row>
