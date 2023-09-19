@@ -23,13 +23,32 @@ function MainBox() {
       <div className="introBox align-middle justify-center justify-items-center">
         <Row>
           <Col span={24}>
-            <span
-              className=" text-6xl  text-center p-6 "
-              style={{ color: "lightblue" }}
-            >
-              I'm
-              <span className="waviy"> Amitabh Suyash</span>
-            </span>
+            <div className="flex  items-center justify-center">
+              <div className="group relative cursor-pointer border-b border-white-700 p-4  transition ease-in-out duration-500 hover:border-white-100 hover:scale-110">
+                <div className="text-5xl flex items-center relative">
+                  {"Amitabh Suyash".split("").map((letter, i) => (
+                    <div
+                      key={i}
+                      className="text-white origin-top transition-transform duration-300 ease-in-out group-hover:scale-y-0"
+                      style={{ transitionDelay: `${i * 100}ms` }}
+                    >
+                      {letter}
+                    </div>
+                  ))}
+                </div>
+                <div className="text-5xl absolute bottom-0 top-0  flex items-center ">
+                  {"Amitabh Suyash".split("").map((letter, i) => (
+                    <div
+                      key={i}
+                      className="text-white origin-top transition-transform duration-300 ease-in-out scale-y-0 group-hover:scale-y-100"
+                      style={{ transitionDelay: `${i * 100}ms` }}
+                    >
+                      {letter}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </Col>
         </Row>
 
