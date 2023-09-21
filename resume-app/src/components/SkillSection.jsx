@@ -1,17 +1,17 @@
 import React from "react";
 import SkillCard from "./SkillCard";
 
-function skills() {
+function SkillSection() {
   return (
     <div className="resume">
       <h1>My Resume</h1>
-      <div className="skills">
-        <SkillCard skillName="C#" proficiency={80} />
-        <SkillCard skillName="React.js" proficiency={85} />
+      <div className="">
+        <SkillCard skillName="C#" skillDescription={80} />
+        <SkillCard skillName="React.js" skillDescription={85} />
         {/* Add similar SkillCard components for other skills */}
       </div>
     </div>
   );
 }
 
-export default skillss;
+export default SkillSection;

@@ -21,3 +21,45 @@
       transform: translateY(-20px)
     }
   } 
+  .skill-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .skill-header h3 {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  
+  .proficiency-bar {
+    background-color: #eee;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .proficiency-fill {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 10px;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+      

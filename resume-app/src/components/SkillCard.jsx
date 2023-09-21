@@ -1,24 +1,13 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { DiCode, DiReact } from "react-icons/di";
 
-const SkillCard = ({ skillName, proficiency }) => {
-  const proficiencyPercentage = `${proficiency}%`;
-
+const SkillCard = ({ skillName, skillDescription }) => {
   return (
     <div className="skill-card">
-      <div className="skill-header">
-        <FontAwesomeIcon icon={faCode} size="2x" />
-        <h3>{skillName}</h3>
-      </div>
-      <div className="proficiency-bar">
-        <div
-          className="proficiency-fill"
-          style={{ width: proficiencyPercentage }}
-        >
-          {proficiencyPercentage}
-        </div>
-      </div>
+      {skillName === "C#" && <DiCode />}
+      {skillName === "React.js" && <DiReact />}
+      <h3>{skillName}</h3>
+      <p>{skillDescription}</p>
     </div>
   );
 };
