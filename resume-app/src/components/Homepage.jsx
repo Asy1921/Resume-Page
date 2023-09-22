@@ -15,6 +15,7 @@ import AboutMe from "./AboutMe";
 import MainBox from "./MainBox";
 import Navbar from "./Navbar";
 import SkillSection from "./SkillSection";
+import SkillProficiency from "./SkillProficiency";
 const { Header, Footer, Sider, Content } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
@@ -70,7 +71,7 @@ const Homepage = () => {
             <Col span={24} className="flex justify-center ">
               <MainBox />
               <AboutMe />
-              <SkillSection />
+              <SkillProficiency />
             </Col>
           )}
         </Row>
