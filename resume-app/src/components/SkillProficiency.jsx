@@ -1,83 +1,96 @@
 import React from "react";
-import { ResponsivePie } from "@nivo/pie";
+import { PieChart } from "react-minimal-pie-chart";
 
 const SkillProficiency = () => {
   // Skill proficiency data for individual pie charts
   const proficiencyData = [
     {
-      id: "C#",
-      label: "C#",
+      title: "C#",
       value: 90,
-      color: "rgba(75, 192, 192, 0.6)", // Custom color for C#
+      color: "#007BFF", // Blue color for C#
     },
     {
-      id: "ReactJS",
-      label: "ReactJS",
+      title: "ReactJS",
       value: 85,
-      color: "rgba(255, 99, 132, 0.6)", // Custom color for ReactJS
+      color: "#FF5733", // Orange color for ReactJS
     },
     {
-      id: "NET",
-      label: ".NET",
+      title: ".NET",
       value: 80,
-      color: "rgba(255, 205, 86, 0.6)", // Custom color for .NET
+      color: "#FFD700", // Gold color for .NET
     },
     {
-      id: "Excel/VBA",
-      label: "Excel/VBA",
+      title: "Excel/VBA",
       value: 75,
-      color: "rgba(54, 162, 235, 0.6)", // Custom color for Excel/VBA
+      color: "#36A2EB", // Sky blue color for Excel/VBA
     },
     {
-      id: "Python",
-      label: "Python",
+      title: "Python",
       value: 95,
-      color: "rgba(153, 102, 255, 0.6)", // Custom color for Python
+      color: "#9966FF", // Purple color for Python
     },
   ];
 
-  const chartSize = 200; // Customize the size of the charts (half of the original size)
+  const chartSize = 30; // Adjust the size of the pie charts
+  const lineWidth = 15; // Adjust the thickness of the pie charts
+  const labelStyle = {
+    fontSize: "10px", // Adjust the font size for the percentage labels (smaller)
+    fontFamily: "Arial, sans-serif",
+  };
 
   return (
     <div>
-      <h2>Skill Proficiency Showcase (Nivo)</h2>
-      <div
-        className="pie-charts"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
-        {proficiencyData.map((data) => (
-          <div
-            className="pie-chart"
-            key={data.id}
-            style={{ width: chartSize, height: chartSize }}
-          >
-            <h3>{data.label}</h3>
-            <div style={{ height: chartSize, width: chartSize }}>
-              <ResponsivePie
-                data={[data]}
-                margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-                innerRadius={0.6} // Adjust inner radius for the donut effect
-                padAngle={0.7}
-                cornerRadius={3}
-                colors={[data.color]} // Use the custom color for each chart
-                borderWidth={1}
-                borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
-                radialLabelsSkipAngle={10}
-                radialLabelsTextXOffset={6}
-                radialLabelsTextColor="#333333"
-                radialLabelsLinkOffset={0}
-                radialLabelsLinkDiagonalLength={16}
-                radialLabelsLinkHorizontalLength={24}
-                radialLabelsLinkStrokeWidth={1}
-                radialLabelsLinkColor={{ from: "color" }}
-                slicesLabelsSkipAngle={10}
-                slicesLabelsTextColor="#333333"
-                // Calculate the percentage of remaining (100 - proficiency)
-                slicesLabels={(slice) => `${slice.id} ${100 - data.value}%`}
-                sliceLabel={(slice) => {
-                  return `${slice.id} ${(slice.value / 100) * data.value}%`;
-                }}
+      <b style={{ fontSize: "24px" }}>Skill Proficiency </b>
+      <div className="pie-charts" style={{ display: "flex" }}>
+        {proficiencyData.map((data, index) => (
+          <div className="pie-chart" key={index} style={{ margin: "0 10px" }}>
+            <h2>{data.title}</h2>
+            <div style={{ position: "relative" }}>
+              <PieChart
+                data={[
+                  { value: data.value, color: data.color },
+                  { value: 100 - data.value, color: "transparent" },
+                ]}
+                radius={chartSize}
+                lineWidth={lineWidth}
+                label={() => null} // Remove the default label
               />
+              {/* Create custom label with line */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  textAlign: "center",
+                }}
+              >
+                <span
+                  style={{
+                    ...labelStyle,
+                    position: "absolute",
+                    top: "-20px",
+                    left: "-28px",
+                  }}
+                >
+                  {data.title}
+                  {":" + data.value}
+                </span>
+                <svg
+                  height="80"
+                  width="100"
+                  style={{ position: "absolute", top: "-15", left: "-30" }}
+                >
+                  <line
+                    x1="0"
+                    y1="10"
+                    x2="80"
+                    y2="10"
+                    stroke={data.color}
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         ))}
