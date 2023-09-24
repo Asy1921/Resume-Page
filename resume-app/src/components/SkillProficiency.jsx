@@ -11,22 +11,22 @@ const SkillProficiency = () => {
     },
     {
       title: "ReactJS",
-      value: 85,
+      value: 80,
       color: "#FF5733", // Orange color for ReactJS
     },
     {
       title: ".NET",
-      value: 80,
+      value: 85,
       color: "#FFD700", // Gold color for .NET
     },
     {
       title: "Excel/VBA",
-      value: 75,
+      value: 85,
       color: "#36A2EB", // Sky blue color for Excel/VBA
     },
     {
       title: "Python",
-      value: 95,
+      value: 70,
       color: "#9966FF", // Purple color for Python
     },
   ];
