@@ -28,7 +28,7 @@ function CarouselCardss() {
                   <span className="text-white text-xl font-serif">
                     Hi, I am Amitabh Suyash, a Full Stack Developer{"    "}
                   </span>
-                  <Tooltip title="amitabh.suyash@zs.com">
+                  <Tooltip title="amitabh.suyash@gmail.com">
                     <Button
                       className="ml-2"
                       onClick={() => {

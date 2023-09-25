@@ -58,8 +58,8 @@ function MainBox() {
               className=" text-xl  text-center "
               style={{ color: "lightcyan" }}
             >
-              I'm a Gurgaon based Full Stack Developer, currently working at ZS
-              Associates helping build modern internal tools.
+              I'm a Gurgaon based Full Stack Developer, currently working at a
+              top consulting company helping build modern internal tools.
             </span>
           </Col>
         </Row>
