@@ -16,6 +16,7 @@ import MainBox from "./MainBox";
 import Navbar from "./Navbar";
 import SkillSection from "./SkillSection";
 import SkillProficiency from "./SkillProficiency";
+import SocialIcons from "./SocialIcons";
 const { Header, Footer, Sider, Content } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
@@ -97,7 +98,7 @@ const Homepage = () => {
           width: "100%",
         }}
       >
-        ASY
+        <SocialIcons />
       </Footer>
     </Layout>
   );
