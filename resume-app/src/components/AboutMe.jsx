@@ -150,9 +150,7 @@ function AboutMe() {
                 <Col span={8}>
                   <LaptopOutlined className="p-2" style={{ color: "white" }} />
                   <b className="font-sans text-white ">Employment : </b>{" "}
-                  <i className="font-sans text-white ">
-                    Top Consulting Company
-                  </i>
+                  <i className="font-sans text-white ">BTSA@ZS</i>
                 </Col>
               </Row>
             </div>
