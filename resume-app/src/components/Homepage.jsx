@@ -14,7 +14,6 @@ import React, { useState } from "react";
 import AboutMe from "./AboutMe";
 import MainBox from "./MainBox";
 import Navbar from "./Navbar";
-import SkillSection from "./SkillSection";
 import SkillProficiency from "./SkillProficiency";
 import SocialIcons from "./SocialIcons";
 const { Header, Footer, Sider, Content } = Layout;

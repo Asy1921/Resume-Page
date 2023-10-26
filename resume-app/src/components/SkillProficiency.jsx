@@ -1,7 +1,10 @@
-import React from "react";
+import { Row } from "antd";
+import React, { useState, useRef, useEffect } from "react";
 import { PieChart } from "react-minimal-pie-chart";
 
 const SkillProficiency = () => {
+  const [position, setPosition] = useState(0);
+  const directionRef = useRef(1);
   // Skill proficiency data for individual pie charts
   const proficiencyData = [
     {
@@ -32,68 +35,70 @@ const SkillProficiency = () => {
   ];
 
   const chartSize = 30; // Adjust the size of the pie charts
-  const lineWidth = 15; // Adjust the thickness of the pie charts
+  const lineWidth = 25; // Adjust the thickness of the pie charts
   const labelStyle = {
-    fontSize: "10px", // Adjust the font size for the percentage labels (smaller)
+    fontSize: "15px", // Adjust the font size for the percentage labels (smaller)
     fontFamily: "Arial, sans-serif",
   };
 
   return (
-    <div>
-      <b style={{ fontSize: "24px" }}>Skill Proficiency </b>
-      <div className="pie-charts" style={{ display: "flex" }}>
-        {proficiencyData.map((data, index) => (
-          <div className="pie-chart" key={index} style={{ margin: "0 10px" }}>
-            <h2>{data.title}</h2>
-            <div style={{ position: "relative" }}>
-              <PieChart
-                data={[
-                  { value: data.value, color: data.color },
-                  { value: 100 - data.value, color: "transparent" },
-                ]}
-                radius={chartSize}
-                lineWidth={lineWidth}
-                label={() => null} // Remove the default label
-              />
-              {/* Create custom label with line */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  textAlign: "center",
-                }}
-              >
-                <span
+    <div className="skills-div text-white">
+      <Row className="align-charts mt-2">
+        <b style={{ fontSize: "24px" }}>Skill Proficiency </b>
+      </Row>
+      <div className="align-charts text-white ">
+        <div className="pie-charts" style={{ display: "flex" }}>
+          {proficiencyData.map((data, index) => (
+            <div className="pie-chart" key={index} style={{ margin: "0 10px" }}>
+              <div style={{ position: "relative" }}>
+                <PieChart
+                  data={[
+                    { value: data.value, color: data.color },
+                    { value: 100 - data.value, color: "transparent" },
+                  ]}
+                  radius={chartSize}
+                  lineWidth={lineWidth}
+                  label={() => null} // Remove the default label
+                />
+                {/* Create custom label with line */}
+                <div
                   style={{
-                    ...labelStyle,
                     position: "absolute",
-                    top: "-20px",
-                    left: "-28px",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    textAlign: "center",
                   }}
                 >
-                  {data.title}
-                  {":" + data.value}
-                </span>
-                <svg
-                  height="80"
-                  width="100"
-                  style={{ position: "absolute", top: "-15", left: "-30" }}
-                >
-                  <line
-                    x1="0"
-                    y1="10"
-                    x2="80"
-                    y2="10"
-                    stroke={data.color}
-                    strokeWidth="2"
-                  />
-                </svg>
+                  <span
+                    style={{
+                      ...labelStyle,
+                      position: "absolute",
+                      top: "-25px",
+                      left: "-28px",
+                    }}
+                  >
+                    {data.title}
+                  </span>
+                  <svg
+                    height="80"
+                    width="100"
+                    style={{ position: "absolute", top: "-15", left: "-30" }}
+                  >
+                    <line
+                      x1="0"
+                      y1="10"
+                      x2="80"
+                      y2="10"
+                      stroke={data.color}
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
