@@ -1,5 +1,12 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaCode } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaCode,
+  FaMailchimp,
+  FaMailBulk,
+  FaEnvelope,
+} from "react-icons/fa";
 import "../styles/generalStyles.css";
 
 const SocialIcons = () => {
@@ -28,6 +35,9 @@ const SocialIcons = () => {
         className="social-icon"
       >
         <FaCode />
+      </a>
+      <a href="mailto:amitabh.suyash@gmail.com" className="social-icon">
+        <FaEnvelope />
       </a>
     </div>
   );
